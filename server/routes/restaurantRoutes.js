@@ -1,10 +1,11 @@
-import {Router} from "express";
-import {getFeaturedRestaurants, getRestaurantAvailability, getRestaurantBySlug, getRestaurants} from "../controllers/restaurantController.js";
+const express = require('express');
+const {getRestaurants, getFeaturedRestaurants, getRestaurantsBySlug, getRestaurantsAvailability} = require('../controllers/restaurantController');
 
-const restaurantRouter = Router();
+const restaurantRouter = express.Router();
 
 restaurantRouter.get('/', getRestaurants);
-restaurantRouter.get('/featured', getFeatureRestaurants);
-restaurantRouter.get('/id/availability', getRestaurantAvailability);
+restaurantRouter.get('/featured', getFeaturedRestaurants);
+restaurantRouter.get('/:slug', getRestaurantsBySlug);
+restaurantRouter.get('/:id/availability', getRestaurantsAvailability);
 
-export default restaurantRouter;
+module.exports = restaurantRouter;
