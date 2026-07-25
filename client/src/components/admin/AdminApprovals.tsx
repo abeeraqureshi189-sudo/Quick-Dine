@@ -102,11 +102,10 @@ export default function AdminApprovals({ pendingRestaurants, otherRestaurants, b
                                         <td className="p-4 text-black/55">{r.owner?.name || "N/A"}</td>
                                         <td className="p-4 text-right space-x-3">
                                             <span
-                                                className={`inline-block py-0.5 px-2 text-[9px] font-medium tracking-wider uppercase rounded-sm ${
-                                                    r.status === "approved"
+                                                className={`inline-block py-0.5 px-2 text-[9px] font-medium tracking-wider uppercase rounded-sm ${r.status === "approved"
                                                         ? "bg-green-100 text-green-800"
                                                         : "bg-error-container text-on-error-container"
-                                                }`}
+                                                    }`}
                                             >
                                                 {r.status}
                                             </span>
